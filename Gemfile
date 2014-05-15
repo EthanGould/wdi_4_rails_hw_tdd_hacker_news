@@ -19,11 +19,11 @@ gem 'spring', group: :development
 # Additional gems for this project
 
 gem 'devise'
+gem 'faker'
 
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'pry-rails'
-  gem 'faker'
   gem 'pry-nav'
   gem 'pry-stack_explorer'
   gem 'rspec-rails'

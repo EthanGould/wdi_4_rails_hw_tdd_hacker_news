@@ -1,16 +1,19 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, except: [:index,:show]
   def index
     @articles = Article.all
   end
 
   def show
+    @article = Article.find(params[:id])
   end
+
   def new
     @article = Article.new
   end
 
   def create
-    Article.create(article_params)
+    @article = Article.create(article_params)
     flash[:notice] = "Article successfully created!"
     redirect_to articles_path
   end
